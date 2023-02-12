@@ -1,4 +1,4 @@
-#include "header/queue.h"
+#include "header/type.h"
 
 
 int enqueue(PROCESS **queue, PROCESS *p)  // NOTE **queue

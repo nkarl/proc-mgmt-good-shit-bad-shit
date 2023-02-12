@@ -1,7 +1,7 @@
 /***************************************************************
  ***************** A Multitasking System ***********************
  ***************************************************************/
-#include "header/queue.h"
+#include "header/type.h"
 
 /* INIT global processes and process queues */
 PROCESS  process[NPROC] ; // 9 PROCs
@@ -19,6 +19,22 @@ int scheduler    (            );
 int ps           (            );
 int init         (            );
 
+int ksleep(int event);
+int kwakeup(int event);
+int kexit(int exitValue);
+int kwait(int *status);
+
+void     printStatus     ( PROCESS *p);
+
+int      enqueue         ( PROCESS **queue, PROCESS *p);
+PROCESS *dequeue         ( PROCESS **queue);
+
+void     printFreeList   ( PROCESS *p);
+void     printSleepList  ( PROCESS *p);
+void     printChildList  ( PROCESS *p);
+void     printList       ( char *name, PROCESS *p);
+
+void     printReadyQueue ( PROCESS *p);
 void do_switch() {
     tswitch();
 }

@@ -1,8 +1,25 @@
 /********** wait.c file **********/
-#include "header/wait.h"
+#include "header/type.h"
 // copy the below example if you need access to other global variables from t.c
 
 /********* Required PRE-work ***********/
+extern PROCESS *running;
+extern PROCESS *freeList;
+extern PROCESS *sleepList;
+extern PROCESS *readyQueue;
+extern char* pstatus[];
+
+void     printStatus     ( PROCESS *p);
+
+int      enqueue         ( PROCESS **queue, PROCESS *p);
+PROCESS *dequeue         ( PROCESS **queue);
+
+void     printFreeList   ( PROCESS *p);
+void     printSleepList  ( PROCESS *p);
+void     printChildList  ( PROCESS *p);
+void     printList       ( char *name, PROCESS *p);
+
+void     printReadyQueue ( PROCESS *p);
 
 // 1. Implement ksleep() per the algorithm in 3.4.1
 int ksleep(int event)
