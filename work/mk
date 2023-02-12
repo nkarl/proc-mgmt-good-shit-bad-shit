@@ -1,0 +1,8 @@
+rm a.out
+/*gcc -m32 t.c s.s*/
+/*gcc -no-pie t.c ts.s -v*/
+gcc -no-pie src/t.c src/ts.s
+./a.out
+
+
+

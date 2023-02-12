@@ -1,0 +1,4 @@
+rm a.out
+/*gcc -m32 src/t.c src/queue.c src/wait.c src/s.s*/
+gcc -no-pie src/t.c src/queue.c src/wait.c src/ts.s
+./a.out
